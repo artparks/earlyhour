@@ -1,0 +1,41 @@
+/* =================================
+ *
+ * helpers
+ *
+ * ============================== */
+
+/* flex veritcal align */
+@mixin flex-center() {
+	display: flex;
+	align-items: center;
+}
+
+/* transitions */
+@mixin transition($time: 0.3s) {
+	transition: all $time ease-in-out;
+}
+
+/* make list a column list */
+@mixin col-list($gap, $xs-count, $sm-count, $md-count, $lg-count) {
+	column-count: $xs-count;
+	column-gap: $gap;
+
+	@media (min-width: $screen-sm-min) {
+		column-count: $sm-count;
+	}
+	@media (min-width: $screen-md-min) {
+		column-count: $md-count;
+	}
+	@media (min-width: $screen-lg-min) {
+		column-count: $lg-count;
+	}
+}
+
+/* yellow links?! */
+@mixin yellow-link() {
+	color: $brand-gold;
+
+	&:hover {
+		color: darken($brand-gold, 5%);
+	}
+}
